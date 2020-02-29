@@ -50,5 +50,6 @@ dependencies {
     //Location Provider
     implementation "com.google.android.gms:play-services-location:17.0.0"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-
+    //Pinch To zoom inageView
+    implementation 'com.jsibbold:zoomage:1.3.0'
 }

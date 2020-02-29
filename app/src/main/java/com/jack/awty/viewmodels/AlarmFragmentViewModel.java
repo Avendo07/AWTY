@@ -2,6 +2,7 @@ package com.jack.awty.viewmodels;
 
 import android.app.Application;
 import android.util.Log;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -28,5 +29,4 @@ public class AlarmFragmentViewModel extends AndroidViewModel {
 		mStations = stationsRepository.getStations();
 	}
 	public LiveData<List<String>> getmStations(){return this.mStations;}
-	
 }
