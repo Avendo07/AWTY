@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mi_alarm">
+    <fragment
+        android:id="@id/mi_alarm"
+        android:name="com.jack.awty.AlarmFragment"
+        android:label="AlarmFragment"
+        tools:layout="@layout/fragment_alarm">
+        <action
+            android:id="@+id/action_alarmFragment_to_mapFragment"
+            app:destination="@id/mi_map" />
+    </fragment>
+    <fragment
+        android:id="@id/mi_map"
+        android:name="com.jack.awty.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_mapFragment_to_placeholder"
+            app:destination="@id/mi_about" />
+    </fragment>
+    <fragment
+        android:id="@id/mi_about"
+        android:label="AboutFragment" />
+</navigation>

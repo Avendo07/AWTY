@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".LocationChooserDialog">
+	
+	<androidx.appcompat.widget.AppCompatAutoCompleteTextView
+		android:id="@+id/edit_text_location_choose"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="@dimen/small_margin"
+		android:hint="@string/location_choose_hint"
+		android:maxLines="1"
+		android:completionThreshold="1"
+		android:inputType="textAutoComplete"
+		android:isScrollContainer="true">
+		<requestFocus/>
+	</androidx.appcompat.widget.AppCompatAutoCompleteTextView>
+		
+
+</RelativeLayout>
