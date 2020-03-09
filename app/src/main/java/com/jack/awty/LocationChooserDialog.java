@@ -7,20 +7,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import com.jack.awty.database.Station;
-import com.jack.awty.repository.Alarms;
-import com.jack.awty.viewmodels.AlarmFragmentViewModel;
+import com.jack.awty.viewmodels.MainActivityViewModel;
 
 import java.util.List;
 
@@ -30,11 +26,13 @@ public class LocationChooserDialog extends DialogFragment {
 	public LocationChooserDialog(){}
 	
 	private AutoCompleteTextView location_text_view;
-	private AlarmFragmentViewModel viewModel;
+	private MainActivityViewModel viewModel;
 	
 	@NonNull
 	@Override
 	public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+		//Creates a Dialog
+		//TODO: Implement shared viewnmodel to share the chosen thing to alarmFragment
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		LayoutInflater inflater = requireActivity().getLayoutInflater();
 		View dialogView = inflater.inflate(R.layout.dialog_location_chooser, null);
@@ -43,18 +41,16 @@ public class LocationChooserDialog extends DialogFragment {
 					//TODO:Alarm creation affirmative
 				})
 				.setNegativeButton(R.string.app_name, (dialog, which) -> LocationChooserDialog.this.getDialog().cancel());
+		
+		//Sets the autocomplete textView adapter
 		location_text_view = dialogView.findViewById(R.id.edit_text_location_choose);
-		//TODO:Implement strategy to get LiveData to populate the adapter
 		ArrayAdapter adapter = new ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1);
 		location_text_view.setAdapter(adapter);
-		viewModel = new ViewModelProvider(requireActivity()).get(AlarmFragmentViewModel.class);
-		viewModel.getmStations().observe(requireActivity(), new Observer<List<String>>() {
-			@Override
-			public void onChanged(List<String> strings) {
-				adapter.clear();
-				adapter.addAll(strings);
-				adapter.notifyDataSetChanged();
-			}
+		viewModel = new ViewModelProvider(requireActivity()).get(MainActivityViewModel.class);
+		viewModel.getmStations().observe(requireActivity(), strings -> {
+			adapter.clear();
+			adapter.addAll(strings);
+			adapter.notifyDataSetChanged();
 		});
 		return builder.create();
 	}

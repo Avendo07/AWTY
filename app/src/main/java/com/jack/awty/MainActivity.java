@@ -1,9 +1,6 @@
 package com.jack.awty;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -14,14 +11,10 @@ import android.app.NotificationManager;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.jack.awty.repository.Alarms;
-import com.jack.awty.viewmodels.AlarmFragmentViewModel;
-
-import java.util.List;
+import com.jack.awty.viewmodels.MainActivityViewModel;
 
 public class MainActivity extends AppCompatActivity {
-    private AlarmFragmentViewModel alarmFragmentViewModel;
+    private MainActivityViewModel mainActivityViewModel;
     public final static String CHANNEL_ID = "AWTY";
     
     @Override
