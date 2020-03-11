@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
@@ -17,8 +16,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import com.jack.awty.viewmodels.MainActivityViewModel;
-
-import java.util.List;
 
 public class LocationChooserDialog extends DialogFragment {
 	//TODO:Update stations from official data using a Room database

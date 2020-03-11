@@ -30,9 +30,9 @@ public class AlarmWorker extends Worker {
 													.setSubText("This is just to annoy you! uWu")
 													.setContentTitle("ಠ_ಠ")
 													.setSmallIcon(R.drawable.ic_awtyicon)
-													.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+													.setPriority(NotificationCompat.PRIORITY_HIGH);
 		NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
-		notificationManagerCompat.notify((int)(Math.random()*100), builder.build());
+		notificationManagerCompat.notify(1, builder.build());
 		Log.d(TAG, "doWork: started");
 		return Result.success();
 	}
