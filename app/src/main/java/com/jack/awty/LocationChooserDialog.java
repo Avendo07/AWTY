@@ -29,6 +29,7 @@ public class LocationChooserDialog extends DialogFragment {
 	@Override
 	public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
 		//Creates a Dialog
+		//Hello Dialog
 		//TODO: Implement shared viewnmodel to share the chosen thing to alarmFragment
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		LayoutInflater inflater = requireActivity().getLayoutInflater();
